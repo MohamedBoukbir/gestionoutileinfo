@@ -17,7 +17,7 @@ use App\Http\Controllers\UtilisateurController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 Route::get('/dashboard', [DashbordController::class,'logincontrole'])->middleware(['auth'])->name('dashboard');
 
