@@ -143,9 +143,9 @@ form {
 			<div class="screen__content">
 				<form action="{{ route('login') }}" method="POST">
 					@csrf
-					<div class="group">
-						<label for="email" class="label">Email </label>
-						<input id="email" type="text" name="email" class="input" required autofocus>
+					<div class="login__field">
+						<input id="email" type="text" name="email" class="login__input" placeholder="Email" required autofocus>
+						<br>
 						@error('email')
                             <span class="invalid-feedback"  style="color: red;" role="alert">
                                 <strong>{{ $message }}</strong>
