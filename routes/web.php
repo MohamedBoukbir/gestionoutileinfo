@@ -23,6 +23,9 @@ Route::get('/dashboard', [DashbordController::class,'logincontrole'])->middlewar
 
 Route::middleware('auth','role:admin')->group(function () {
     Route::get('/dashboard/Admin', [UtilisateurController::class, 'index'])->name('admin');
+    Route::post('/dashboard/User/Add', [UtilisateurController::class, 'add'])->name('user.add');
+Route::delete('/dashboard/User/Delete/{id}', [UtilisateurController::class, 'destroy'])->name('user.destroy');
+Route::post('/dashboard/User/Update/{id}', [UtilisateurController::class, 'update'])->name('user.update');
 });
 
 Route::middleware('auth')->group(function () {
