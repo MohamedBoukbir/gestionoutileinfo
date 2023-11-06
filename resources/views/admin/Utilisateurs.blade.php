@@ -93,7 +93,7 @@ ul {
 h2,
 h3,
 a {
-	color: #34495e;
+	color: #4C489D;
 }
 
 a {
@@ -182,7 +182,7 @@ a {
 <body>
     {{-- !START NAVBAR --}}
     <header class="header">
-      <h1 class="logo"><a href="#">Gestion Des Utilisateur</a></h1>
+      <h1 class="logo"><a style="color: #6C63AC" href="#">Gestion Des Utilisateur</a></h1>
         <ul class="main-nav">
             <li><a href="#">Group</a></li>
             <li><a href="#">OutilInfo</a></li>
