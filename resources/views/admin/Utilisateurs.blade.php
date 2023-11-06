@@ -71,6 +71,103 @@
       #example thead th {
           text-align: center;
       }
+      #example table{
+         table-layout: auto; 
+      }
+      * {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	.header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+
   </style>
 
 
@@ -84,42 +181,15 @@
 
 <body>
     {{-- !START NAVBAR --}}
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand text-primary fw-bold" href="#">Gestion Des
-                Utilisateurs</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav active" aria-current="true">
-
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-2">
-                            <div class="fw-bold"><a href="#" style="text-decoration: none;">Group</a></div>
-                         
-                        </div>
-                      
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-start ms-5">
-                        <div class="ms-2 me-2">
-                            <div class="fw-bold"><a href="#" style="text-decoration: none;">
-                                Outilinfo</a></div>
-                        </div>
-                      
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-start ms-5">
-                        <div class="ms-2 me-2">
-                            <div class="fw-bold"><a href="#" style="text-decoration: none;">
-                                    Atacher Outile a Utilisateur </a></div>
-                        </div>
-                       
-                    </li>
-                  
-                </ul>
-            </div>
-            <div class=" justify-content-end" id="navbarNav">
+    <header class="header">
+      <h1 class="logo"><a href="#">Gestion Des Utilisateur</a></h1>
+        <ul class="main-nav">
+            <li><a href="#">Group</a></li>
+            <li><a href="#">OutilInfo</a></li>
+            <li><a href="#"> Atacher Outile a Utilisateur</a></li>
+            <li><a href="#"> Atacher Outile a Group</a></li>
+            <li>
+              <div class=" justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
@@ -134,9 +204,10 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    {{-- !END NAVBAR --}}
+          </li>
+        </ul>
+    </header> 
+{{-- !END NAVBAR --}}
 
     {{-- !TABLE 1 --}}
     <div class="my-5 ms-5 me-5">
@@ -144,8 +215,8 @@
             data-bs-target="#AddModal">
             <i class="fa-solid fa-plus"></i> Ajouter Utilisateur
         </button>
-        <table id="example" class="table table-hover table-bordered text-center table-responsive">
-            <thead class="table table-light">
+        <table id="example" class="table table table-sm table-hover table-bordered text-center table-responsive">
+            <thead class="table table-dark">
                 <tr>
                     <th scope="col">Nom</th>
                     <th scope="col">Prenom</th>
@@ -163,7 +234,7 @@
                         <td>{{ $user->adresse }}</td>
                         <td>
                     
-                            <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal"
+                            <button type="button" style="margin-right: 10px;" class="btn btn-warning text-light " data-bs-toggle="modal"
                                 data-bs-target="#updateModal{{ $user->id }}"><i
                                     class="fa-solid fa-pen"></i></button>
                             <button type="button" class="btn btn-danger text-light" data-bs-toggle="modal"
@@ -264,10 +335,6 @@
                                                 </div>
                                              {{-- <div class="row mt-2 "> --}}
                                             
-
-
-
-                            
                                         </div>
                                       
                                         <div class="row mt-2">
