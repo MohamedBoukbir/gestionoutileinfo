@@ -218,20 +218,24 @@ a {
         <table id="example" class="table table table-sm table-hover table-bordered text-center table-responsive">
             <thead class="table table-dark">
                 <tr>
+                    <th scope="col">Matricule</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Prenom</th>
-                    <th scope="col">Cin</th>
-                    <th scope="col">Adresse</th>
+                   
+                    <th scope="col">Fonction</th>
+                    <th scope="col">Departement</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($users as $user)
                     <tr>
+                        <td>{{ $user->matricule }}</td>
                         <td>{{ $user->nom }}</td>
                         <td>{{ $user->prenom }}</td>
-                        <td>{{ $user->cin }}</td>
-                        <td>{{ $user->adresse }}</td>
+                       
+                        <td>{{ $user->fonction }}</td>
+                        <td>{{ $user->departement }}</td>
                         <td>
                     
                             <button type="button" style="margin-right: 10px;" class="btn btn-warning text-light " data-bs-toggle="modal"
@@ -293,6 +297,17 @@ a {
                                      
                                         <div class="row">
                                             <div class="col-12 ">
+
+                                                <div class="col-12">
+                                                    <div class="mb-3">
+                                                        <label for="matricule" class="form-label">matricule </label>
+                                                        <input class="form-control" value="{{$user->matricule}}" required  name="matricule" type="text"
+                                                            id="matricule"  >
+                                                        @error('matricule')
+                                                            <div class="alert alert-danger">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <div class="mb-3">
                                                         <label for="nom" class="form-label">Nom </label>
@@ -315,20 +330,20 @@ a {
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="mb-3">
-                                                        <label for="cin" class="form-label">Cin </label>
-                                                        <input class="form-control" value="{{$user->cin}}"   required  name="cin" type="text"
-                                                            id="cin"  >
-                                                        @error('cin')
+                                                        <label for="fonction" class="form-label">Fonction </label>
+                                                        <input class="form-control" value="{{$user->fonction}}"   required  name="fonction" type="text"
+                                                            id="fonction"  >
+                                                        @error('fonction')
                                                             <div class="alert alert-danger">{{ $message }}</div>
                                                         @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="mb-3">
-                                                        <label for="adresse" class="form-label">Adresse </label>
-                                                        <input class="form-control" value="{{$user->adresse}}"  required  name="adresse" type="text"
-                                                            id="adresse"  >
-                                                        @error('adresse')
+                                                        <label for="departement" class="form-label">Departement </label>
+                                                        <input class="form-control" value="{{$user->departement}}"  required  name="departement" type="text"
+                                                            id="departement"  >
+                                                        @error('departement')
                                                             <div class="alert alert-danger">{{ $message }}</div>
                                                         @enderror
                                                     </div>
@@ -386,6 +401,16 @@ a {
                                                 <div class="col-12 ">
                                                     <div class="col-12">
                                                         <div class="mb-3">
+                                                            <label for="matricule" class="form-label">Matricule </label>
+                                                            <input class="form-control" required  name="matricule" type="text"
+                                                                id="matricule"  >
+                                                            @error('matricule')
+                                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
                                                             <label for="nom" class="form-label">Nom </label>
                                                             <input class="form-control" required  name="nom" type="text"
                                                                 id="nom"  >
@@ -406,20 +431,20 @@ a {
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3">
-                                                            <label for="cin" class="form-label">Cin </label>
-                                                            <input class="form-control" required  name="cin" type="text"
-                                                                id="cin"  >
-                                                            @error('cin')
+                                                            <label for="fonction" class="form-label">Fonction </label>
+                                                            <input class="form-control" required  name="fonction" type="text"
+                                                                id="fonction"  >
+                                                            @error('fonction')
                                                                 <div class="alert alert-danger">{{ $message }}</div>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3">
-                                                            <label for="adresse" class="form-label">Adresse </label>
-                                                            <input class="form-control" required  name="adresse" type="text"
-                                                                id="adresse"  >
-                                                            @error('adresse')
+                                                            <label for="departement" class="form-label">Departement </label>
+                                                            <input class="form-control" required  name="departement" type="text"
+                                                                id="departement"  >
+                                                            @error('departement')
                                                                 <div class="alert alert-danger">{{ $message }}</div>
                                                             @enderror
                                                         </div>

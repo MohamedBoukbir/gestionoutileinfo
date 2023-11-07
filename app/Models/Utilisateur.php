@@ -12,8 +12,9 @@ class Utilisateur extends Model
     protected $fillable = [
         'nom',
         'prenom',
-        'cin',
-        'adresse',
+        'departement',
+        'fonction',
+        'matricule',
     ];
 
 }
