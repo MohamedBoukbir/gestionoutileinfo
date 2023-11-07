@@ -24,15 +24,17 @@ class UtilisateurController extends Controller
       $request->validate([
          'nom' => ['required', 'string', 'max:255'],
          'prenom' => ['required', 'string', 'max:255'],
-         'cin' => ['required', 'string', 'max:255'],
-         'adresse' => ['required', 'string', 'max:255'],
+         'matricule' => ['required', 'string', 'max:255'],
+         'fonction' => ['required', 'string', 'max:255'],
+         'departement' => ['required', 'string', 'max:255'],
      ]);
   
      $user = new Utilisateur() ;
      $user->nom=$request->nom;
      $user->prenom=$request->prenom;
-     $user->cin=$request->cin;
-     $user->adresse=$request->adresse;
+     $user->matricule=$request->matricule;
+     $user->fonction=$request->fonction;
+     $user->departement=$request->departement;
      $user->save();
      return back();
      }
@@ -41,15 +43,17 @@ class UtilisateurController extends Controller
         $request->validate([
            'nom' => ['required', 'string', 'max:255'],
            'prenom' => ['required', 'string', 'max:255'],
-           'cin' => ['required', 'string', 'max:255'],
-           'adresse' => ['required', 'string', 'max:255'],
+           'matricule' => ['required', 'string', 'max:255'],
+           'fonction' => ['required', 'string', 'max:255'],
+           'departement' => ['required', 'string', 'max:255'],
        ]);
     
        $user =Utilisateur::find($id) ;
        $user->nom=$request->nom;
        $user->prenom=$request->prenom;
-       $user->cin=$request->cin;
-       $user->adresse=$request->adresse;
+       $user->matricule=$request->matricule;
+       $user->fonction=$request->fonction;
+       $user->departement=$request->departement;
        $user->save();
        return back();
        }
