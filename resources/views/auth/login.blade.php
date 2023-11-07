@@ -122,7 +122,7 @@ form {
 	font-weight: 700;
 	display: flex;
 	align-items: center;
-	width: 100%;
+	width: 70%;
 	color: #4C489D;
 	box-shadow: 0px 2px 2px #5C5696;
 	cursor: pointer;
@@ -160,7 +160,7 @@ form {
 						</span>
 					@enderror
 					</div>				
-						<input type="submit" class="login__submit" value="Se Connecter"><i class="button__icon fas fa-chevron-right"></i>
+						<input type="submit" class="login__submit" value="Se Connecter  >>"><i class="button__icon fas fa-chevron-right"></i>
 				</form>
 			</div>
 			<div class="screen__background">
